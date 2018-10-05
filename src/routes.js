@@ -20,7 +20,7 @@ class Routes extends Component {
                     <Route path="/articles/:id" exact component={NewsArticle}/>
                     <Route path="/videos/:id" exact component={VideoArticle}/>
                     <Route path="/videos" exact component={VideosMain}/>
-                    <Route parth="/sign-in" exact component={SignIn} />
+                    <Route path="/sign-in" exact component={SignIn} />
                 </Switch>
             </Layout>
            
