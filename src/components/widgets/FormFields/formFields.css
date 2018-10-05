@@ -20,3 +20,10 @@
     box-sizing: border-box;
     font-weight: 300;
 }
+
+.labelError{
+    color: red;
+    font-weight: 500;
+    margin-top: 5px;
+    padding: 5px;
+}
