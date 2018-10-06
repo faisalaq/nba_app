@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import Home from './components/Home/home';
@@ -10,11 +10,10 @@ import NewsMain from './components/Articles/News/Main/index';
 import VideosMain from './components/Articles/Videos/Main/index';
 import SignIn from './components/signIn/signIn'
 
-class Routes extends Component {
-    render(){
-        console.log(this.props)
+const Routes =(props)=> {
+    
         return(
-            <Layout>
+            <Layout user={props.user}>
                 <Switch>
                     <Route path="/" exact component={Home}/>
                     <Route path="/news" exact component={NewsMain}/>
@@ -26,7 +25,7 @@ class Routes extends Component {
             </Layout>
            
         )
-    }
+
 }
 
 export default Routes;
