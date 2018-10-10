@@ -173,12 +173,12 @@ class Dashboard extends Component {
             firebaseArticles.orderByChild('id')
             .limitToLast(1).once('value')
             .then((snapshot)=>{
-                let article = null
+                let articleId = null
                 snapshot.forEach((childSnapshot)=>{
-                    article = childSnapshot.val().id 
+                    articleId = childSnapshot.val().id 
                 })
                 dataToSubmit['date'] = firebase.database.ServerValue.TIMESTAMP
-                dataToSubmit['id'] = 0
+                dataToSubmit['id'] = articleId + 1 
                 dataToSubmit['team'] = parseInt(dataToSubmit['team']) 
                 console.log(dataToSubmit)
                 firebaseArticles.push(dataToSubmit)

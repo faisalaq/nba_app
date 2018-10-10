@@ -10,6 +10,8 @@ import NewsMain from './components/Articles/News/Main/index';
 import VideosMain from './components/Articles/Videos/Main/index';
 import SignIn from './components/signIn/signIn'
 import Dashboard from './components/Dashboard/dashboard'
+import PrivateRoute from './components/AuthRoutes/privateRoutes'
+import PublicRoute from './components/AuthRoutes/publicRoutes'
 
 const Routes =(props)=> {
     
@@ -20,9 +22,9 @@ const Routes =(props)=> {
                     <Route path="/news" exact component={NewsMain}/>
                     <Route path="/articles/:id" exact component={NewsArticle}/>
                     <Route path="/videos/:id" exact component={VideoArticle}/>
-                    <Route path="/videos" exact component={VideosMain}/>
-                    <Route path="/sign-in" exact component={SignIn} />
-                    <Route path="/dashboard" exact component={Dashboard}/>
+                    <PublicRoute {...props} restricted={false} path="/videos" exact component={VideosMain}/>
+                    <PublicRoute {...props} restricted={true} path="/sign-in" exact component={SignIn} />
+                    <PrivateRoute {...props} path="/dashboard" exact component={Dashboard}/>
                 </Switch>
             </Layout>
            
